@@ -1,18 +1,18 @@
 import random as rand
 
 FAT_STYLE = "\033[1m"
-RESET = "\033[0m"
-WHITE = "\033[47m"
+RESET = "\033[0m"           # escape-kod för att återställa textformatet till standard.
+WHITE = "\033[47m"          # escape-kod för att sätta bakgrundsfärgen på texten till vit.
 
-def print_with_delay(text):
+def print_with_delay(text):             # Funktion som skriver ut en text tecken för tecken med en slumpmässig fördröjning mellan varje tecken.
     """Skriver text med en kort fördröjning mellan varje tecken för dramatisk effekt."""
     import sys
-    import time
+    import time         # Importerar nödvändiga bibliotek inom funktionen för att förenkla koden.
     for char in text:
-        delay = rand.uniform(0.01, 0.15)
+        delay = rand.uniform(0.01, 0.15)         # Genererar en slumpmässig fördröjning mellan 0,01 och 0,15 sekunder.
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(delay)
+        time.sleep(delay)           # Pausar programmet för att skapa en dramatisk effekt. (med det slumade talet från rand.uniform)
     print()  # Ny rad efter texten
 
 
